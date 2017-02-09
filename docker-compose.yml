@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  debug:
+    image: tjenwellens/tomcat
+    command: /bin/sh -c "catalina.sh start ; tail -F -n0 /etc/hosts"
+    volumes:
+      - ./target/LuceneRestMovieSearchSpringMVC-1.0:/usr/local/tomcat/webapps/moviesearch
+    ports:
+      - "8080:8080"
+    
+      
+      
